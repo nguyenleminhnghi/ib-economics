@@ -138,6 +138,78 @@ html{scroll-behavior:smooth}
 .cat-tab[data-cat="dev"].active{background:var(--purple-bg);border-color:var(--purple);color:var(--purple)}
 .filter-info{font-size:.82rem;color:var(--text2);padding:4px 0;font-style:italic}
 .question-card.q-hidden{display:none}
+
+/* ===== EXAM GUIDE — Unit 0 ===== */
+.ex-h{font-size:1.15rem;margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--border);letter-spacing:-.01em;font-weight:700}
+
+.exam-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 28px}
+.exam-kpi{background:linear-gradient(135deg,var(--accent-bg),var(--bg2));border:1px solid var(--border);border-radius:14px;padding:18px 14px;text-align:center;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:4px}
+.exam-kpi-num{font-family:'Source Serif 4',Georgia,serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.exam-kpi-label{font-size:.78rem;color:var(--text2);letter-spacing:.3px;text-transform:uppercase;font-weight:600}
+
+.exam-papers-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:8px}
+.paper-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:18px 18px 8px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.paper-card::before{content:'';position:absolute;left:0;right:0;top:0;height:4px}
+.paper-sl::before{background:linear-gradient(90deg,#2563eb,#7c3aed)}
+.paper-hl::before{background:linear-gradient(90deg,#dc2626,#f97316)}
+.paper-card-head{margin-bottom:10px}
+.paper-pill{display:inline-block;padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.paper-pill-sl{background:var(--accent-bg);color:var(--accent);border:1px solid var(--accent)}
+.paper-pill-hl{background:var(--red-bg);color:var(--red);border:1px solid var(--red)}
+.paper-row{padding:12px 0;border-top:1px solid var(--border)}
+.paper-row:first-of-type{border-top:none;padding-top:6px}
+.paper-name{font-weight:700;font-size:1rem;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.paper-weight{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg3);color:var(--text2);letter-spacing:.3px}
+.paper-sl .paper-weight{background:var(--accent-bg);color:var(--accent)}
+.paper-hl .paper-weight{background:var(--red-bg);color:var(--red)}
+.paper-meta{font-size:.78rem;color:var(--text2);margin:3px 0 5px;text-transform:uppercase;letter-spacing:.4px;font-weight:600}
+.paper-desc{font-size:.88rem;color:var(--text);line-height:1.55}
+
+.exam-twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0 12px}
+.exam-step-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow-lg);position:relative}
+.exam-step-a{border-top:4px solid var(--accent)}
+.exam-step-b{border-top:4px solid var(--red)}
+.exam-step-tag{display:inline-block;background:var(--accent);color:#fff;padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.5px}
+.exam-step-tag-b{background:var(--red)}
+.exam-step-marks{font-size:.8rem;color:var(--text2);margin:8px 0 12px;font-weight:600;letter-spacing:.3px;text-transform:uppercase}
+.exam-step-list{margin:0 0 14px;padding-left:22px}
+.exam-step-list li{font-size:.92rem;margin-bottom:8px;line-height:1.55}
+.exam-template{background:var(--bg3);border-radius:10px;padding:12px 14px;border-left:3px solid var(--accent2)}
+.exam-step-b .exam-template{border-left-color:var(--red)}
+.exam-template-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--text2);margin-bottom:6px}
+.exam-template p{margin:0;font-size:.85rem;line-height:1.65;color:var(--text)}
+
+.exam-mini-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.exam-mini-card h5{font-family:'Source Serif 4',Georgia,serif;font-size:1.05rem;margin-bottom:10px;color:var(--accent);font-weight:700}
+.exam-bullets{margin:0;padding-left:18px}
+.exam-bullets li{font-size:.88rem;margin-bottom:7px;line-height:1.55}
+
+.ao-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 12px}
+.ao-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;position:relative;transition:transform .2s,box-shadow .2s}
+.ao-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.ao-tag{align-self:flex-start;padding:4px 10px;border-radius:8px;font-size:.78rem;font-weight:700;letter-spacing:.4px}
+.ao-1 .ao-tag{background:var(--accent-bg);color:var(--accent)}
+.ao-2 .ao-tag{background:var(--green-bg);color:var(--green)}
+.ao-3 .ao-tag{background:var(--orange-bg);color:var(--orange)}
+.ao-4 .ao-tag{background:var(--red-bg);color:var(--red)}
+.ao-card h5{font-family:'Source Serif 4',Georgia,serif;font-size:.98rem;color:var(--text);font-weight:700}
+.ao-card p{font-size:.82rem;color:var(--text2);margin:0;line-height:1.55;flex:1}
+.ao-share{font-size:.75rem;font-weight:700;color:var(--text2);padding-top:6px;border-top:1px solid var(--border);letter-spacing:.3px}
+
+.mistake-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 12px}
+.mistake-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 16px;box-shadow:var(--shadow);position:relative;transition:transform .2s,box-shadow .2s}
+.mistake-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.mistake-no{position:absolute;top:14px;right:16px;font-family:'Source Serif 4',Georgia,serif;font-size:1.8rem;font-weight:700;line-height:1;color:var(--bg3);letter-spacing:-.02em}
+.mistake-card h5{font-family:'Source Serif 4',Georgia,serif;font-size:.98rem;margin-bottom:8px;padding-right:36px;color:var(--accent);font-weight:700}
+.mistake-card p{font-size:.85rem;color:var(--text);margin:0;line-height:1.55}
+
+@media (max-width:760px){
+  .exam-kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .exam-papers-grid,.exam-twocol{grid-template-columns:1fr}
+  .ao-grid{grid-template-columns:repeat(2,1fr)}
+  .mistake-grid{grid-template-columns:1fr}
+  .ex-h{font-size:1.05rem}
+}
 </style>
 </head>
 <body>
@@ -211,171 +283,131 @@ html{scroll-behavior:smooth}
 
 <!-- ==================== UNIT 0: EXAM GUIDE ==================== -->
 <div class="section active" id="sec-exam-guide">
-  <h1 class="section-title">Unit 0: IB Economics Exam Structure & Essay Writing Guide</h1>
-  <p class="section-subtitle"><span class="vi-hover">How to ace your exams — structure, format, and scoring<span class="vi-tip">🇻🇳 Cách đạt điểm cao trong kỳ thi — cấu trúc, định dạng và cách chấm điểm</span></span></p>
+  <h1 class="section-title">Unit 0 · IB Economics Exam & Essay Guide</h1>
+  <p class="section-subtitle"><span class="vi-hover">Everything you need to know to walk into Paper 1, 2 and 3 with confidence<span class="vi-tip">🇻🇳 Mọi thứ bạn cần để bước vào phòng thi Paper 1, 2, 3 một cách tự tin</span></span></p>
   <button class="studied-btn" onclick="toggleStudied('exam-guide')">Mark as studied</button><div style="clear:both"></div>
 
-  <h4>IB Economics Assessment Overview</h4>
-  <div class="diagram-container">
-    <svg viewBox="0 0 680 340" width="680" height="340">
-      <style>text{font-family:'Inter',sans-serif}
-.practice-links-box{background:linear-gradient(135deg,var(--accent-bg),var(--bg2));border:2px solid var(--accent);border-radius:12px;padding:16px 20px;margin:28px 0 12px;position:relative}
-.practice-links-box::before{content:'🎯';position:absolute;top:-14px;left:16px;background:var(--bg);padding:0 8px;font-size:1.1rem}
-.practice-links-box h4{color:var(--accent);margin:0 0 10px;font-size:.95rem}
-.practice-links-box a{display:inline-block;background:var(--accent);color:#fff!important;padding:5px 12px;border-radius:6px;font-size:.82rem;margin:3px 4px;text-decoration:none;transition:all .2s}
-.practice-links-box a:hover{opacity:.85;transform:translateY(-1px)}
-.practice-links-box .q-tag{font-size:.7rem;opacity:.8;margin-left:4px}
-
-/* PRACTICE TABS */
-.practice-tabs{margin:20px 0 24px;padding:0}
-.level-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.level-tab{padding:10px 20px;border:2px solid var(--border);border-radius:10px;background:var(--bg2);color:var(--text);font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s;flex:1;min-width:120px;text-align:center}
-.level-tab:hover{border-color:var(--accent);background:var(--accent-bg)}
-.level-tab.active{border-color:var(--accent);background:var(--accent);color:#fff}
-.level-tab[data-level="sl"].active{border-color:#059669;background:#059669;color:#fff}
-.level-tab[data-level="hl"].active{border-color:#dc2626;background:#dc2626;color:#fff}
-.cat-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
-.cat-tab{padding:6px 14px;border:1px solid var(--border);border-radius:20px;background:var(--bg);color:var(--text2);font-size:.8rem;cursor:pointer;transition:all .2s}
-.cat-tab:hover{border-color:var(--accent);color:var(--accent)}
-.cat-tab.active{background:var(--accent-bg);border-color:var(--accent);color:var(--accent);font-weight:600}
-.cat-tab[data-cat="micro"].active{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
-.cat-tab[data-cat="macro"].active{background:var(--green-bg);border-color:var(--green);color:var(--green)}
-.cat-tab[data-cat="intl"].active{background:var(--orange-bg);border-color:var(--orange);color:var(--orange)}
-.cat-tab[data-cat="dev"].active{background:var(--purple-bg);border-color:var(--purple);color:var(--purple)}
-.filter-info{font-size:.82rem;color:var(--text2);padding:4px 0;font-style:italic}
-.question-card.q-hidden{display:none}
-</style>
-      <!-- Title -->
-      <text x="340" y="22" text-anchor="middle" fill="var(--accent)" font-size="15" font-weight="700">IB Economics Assessment at a Glance</text>
-      <!-- SL column -->
-      <rect x="20" y="40" width="310" height="40" rx="8" fill="var(--accent)" opacity="0.9"/>
-      <text x="175" y="66" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Standard Level (SL)</text>
-      <!-- Paper 1 SL -->
-      <rect x="20" y="88" width="310" height="68" rx="6" fill="var(--accent-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="30" y="108" fill="var(--accent)" font-size="12" font-weight="700">Paper 1 — Extended Response (40%)</text>
-      <text x="30" y="125" fill="var(--text)" font-size="10">1 hr 15 min · Choose 1 of 3 questions</text>
-      <text x="30" y="140" fill="var(--text)" font-size="10">Part (a): 10 marks — Explain (no evaluation)</text>
-      <text x="30" y="152" fill="var(--text)" font-size="10">Part (b): 15 marks — Evaluate (need BOTH sides!)</text>
-      <!-- Paper 2 SL -->
-      <rect x="20" y="164" width="310" height="68" rx="6" fill="var(--green-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="30" y="184" fill="var(--green)" font-size="12" font-weight="700">Paper 2 — Data Response (40%)</text>
-      <text x="30" y="201" fill="var(--text)" font-size="10">1 hr 45 min · Choose 1 of 2 questions</text>
-      <text x="30" y="216" fill="var(--text)" font-size="10">Based on real-world data (text, charts, tables)</text>
-      <text x="30" y="228" fill="var(--text)" font-size="10">4-5 sub-questions, 5–15 marks each</text>
-      <!-- IA SL -->
-      <rect x="20" y="240" width="310" height="50" rx="6" fill="var(--purple-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="30" y="260" fill="var(--purple)" font-size="12" font-weight="700">Internal Assessment (20%)</text>
-      <text x="30" y="277" fill="var(--text)" font-size="10">Portfolio of 3 commentaries (800 words each)</text>
-      <text x="30" y="289" fill="var(--text)" font-size="10">Each from: Micro, Macro, Global</text>
-
-      <!-- HL column -->
-      <rect x="350" y="40" width="310" height="40" rx="8" fill="#dc2626" opacity="0.85"/>
-      <text x="505" y="66" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Higher Level (HL)</text>
-      <!-- Paper 1 HL -->
-      <rect x="350" y="88" width="310" height="68" rx="6" fill="var(--accent-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="360" y="108" fill="var(--accent)" font-size="12" font-weight="700">Paper 1 — Extended Response (30%)</text>
-      <text x="360" y="125" fill="var(--text)" font-size="10">1 hr 15 min · Choose 1 of 3 questions</text>
-      <text x="360" y="140" fill="var(--text)" font-size="10">Part (a): 10 marks — Explain with diagram</text>
-      <text x="360" y="152" fill="var(--text)" font-size="10">Part (b): 15 marks — Evaluate with examples</text>
-      <!-- Paper 2 HL -->
-      <rect x="350" y="164" width="310" height="68" rx="6" fill="var(--green-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="360" y="184" fill="var(--green)" font-size="12" font-weight="700">Paper 2 — Data Response (30%)</text>
-      <text x="360" y="201" fill="var(--text)" font-size="10">1 hr 45 min · Choose 1 of 2 questions</text>
-      <text x="360" y="216" fill="var(--text)" font-size="10">Real-world data + quantitative questions</text>
-      <text x="360" y="228" fill="var(--text)" font-size="10">4-5 sub-questions, 5–15 marks each</text>
-      <!-- Paper 3 HL -->
-      <rect x="350" y="240" width="310" height="50" rx="6" fill="var(--orange-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="360" y="260" fill="var(--orange)" font-size="12" font-weight="700">Paper 3 — HL Extension (20%)</text>
-      <text x="360" y="277" fill="var(--text)" font-size="10">1 hr 45 min · 2 compulsory questions</text>
-      <text x="360" y="289" fill="var(--text)" font-size="10">HL only: Theory of Firm, Multiplier, Calc</text>
-      <!-- IA HL -->
-      <rect x="350" y="298" width="310" height="34" rx="6" fill="var(--purple-bg)" stroke="var(--border)" stroke-width="1"/>
-      <text x="360" y="318" fill="var(--purple)" font-size="12" font-weight="700">Internal Assessment (20%)</text>
-      <text x="540" y="318" fill="var(--text)" font-size="10">Same as SL</text>
-    </svg>
-    <div class="diagram-caption">SL = 2 papers + IA | HL = 3 papers + IA — HL includes Theory of Firm, Multiplier, calculations</div>
+  <!-- Quick KPI strip -->
+  <div class="exam-kpi-grid">
+    <div class="exam-kpi"><span class="exam-kpi-num">3</span><span class="exam-kpi-label">HL papers</span></div>
+    <div class="exam-kpi"><span class="exam-kpi-num">2</span><span class="exam-kpi-label">SL papers</span></div>
+    <div class="exam-kpi"><span class="exam-kpi-num">20%</span><span class="exam-kpi-label">Internal Assessment</span></div>
+    <div class="exam-kpi"><span class="exam-kpi-num">4</span><span class="exam-kpi-label">Assessment objectives</span></div>
   </div>
 
-  <h4>Paper 1 Essay Structure — The Key to High Marks</h4>
-  <div class="warn-box"><strong>Golden Rule:</strong> Part (a) = EXPLAIN only (no evaluation needed). Part (b) = EVALUATE — you MUST present BOTH sides or you're capped at 9/15 maximum!</div>
-
-  <h4>Part (a) — 10 marks — "Explain" Structure</h4>
-  <p><span class="vi-hover"><strong>Step 1: Define</strong> key terms (1-2 sentences). <strong>Step 2: Draw diagram</strong> — label axes, curves, equilibrium, shifts. <strong>Step 3: Explain the theory</strong> using the diagram — walk through cause → effect chain. <strong>Step 4: Real-world application</strong> (brief example strengthens your answer). Aim: ~350-450 words, ~15 minutes.<span class="vi-tip">🇻🇳 <b>Bước 1:</b> Định nghĩa thuật ngữ. <b>Bước 2:</b> Vẽ biểu đồ (nhãn trục, đường, cân bằng). <b>Bước 3:</b> Giải thích lý thuyết theo biểu đồ. <b>Bước 4:</b> Ví dụ thực tế. Mục tiêu: ~350-450 từ, ~15 phút.</span></span></p>
-
-  <div class="def-box"><strong>Part (a) Template:</strong><br>
-  <em>"[Key term] is defined as... [1-2 sentences]"</em><br>
-  <em>"As shown in Figure 1, [explain the diagram — what's on axes, what curves represent]..."</em><br>
-  <em>"When [cause], [the curve] shifts [direction], leading to [effect on P and Q/GDP]..."</em><br>
-  <em>"For example, in [country/case], [brief real-world illustration]..."</em>
+  <h4 class="ex-h">Assessment at a Glance — SL vs HL</h4>
+  <div class="exam-papers-grid">
+    <div class="paper-card paper-sl">
+      <div class="paper-card-head"><span class="paper-pill paper-pill-sl">Standard Level</span></div>
+      <div class="paper-row"><div class="paper-name">Paper 1<span class="paper-weight">40%</span></div><div class="paper-meta">1 h 15 m · 1 of 3 questions</div><div class="paper-desc">Extended response. <b>(a)</b> Explain 10m · <b>(b)</b> Evaluate 15m.</div></div>
+      <div class="paper-row"><div class="paper-name">Paper 2<span class="paper-weight">40%</span></div><div class="paper-meta">1 h 45 m · 1 of 2 questions</div><div class="paper-desc">Data response — real-world extract with text, charts, tables. 4–5 sub-questions, 5–15 marks each.</div></div>
+      <div class="paper-row"><div class="paper-name">Internal Assessment<span class="paper-weight">20%</span></div><div class="paper-meta">Coursework portfolio</div><div class="paper-desc">3 commentaries × 800 words — Micro, Macro and Global. Based on recent news articles.</div></div>
+    </div>
+    <div class="paper-card paper-hl">
+      <div class="paper-card-head"><span class="paper-pill paper-pill-hl">Higher Level</span></div>
+      <div class="paper-row"><div class="paper-name">Paper 1<span class="paper-weight">30%</span></div><div class="paper-meta">1 h 15 m · 1 of 3 questions</div><div class="paper-desc">Extended response. <b>(a)</b> Explain + diagram 10m · <b>(b)</b> Evaluate with examples 15m.</div></div>
+      <div class="paper-row"><div class="paper-name">Paper 2<span class="paper-weight">30%</span></div><div class="paper-meta">1 h 45 m · 1 of 2 questions</div><div class="paper-desc">Data response with <b>quantitative</b> questions (PED, multiplier, tariff revenue…).</div></div>
+      <div class="paper-row"><div class="paper-name">Paper 3 — HL only<span class="paper-weight">20%</span></div><div class="paper-meta">1 h 45 m · 2 compulsory questions</div><div class="paper-desc">HL-only content: Theory of the Firm, Multiplier, Phillips Curve, calculations.</div></div>
+      <div class="paper-row"><div class="paper-name">Internal Assessment<span class="paper-weight">20%</span></div><div class="paper-meta">Same as SL</div><div class="paper-desc">3 commentaries × 800 words — Micro, Macro, Global.</div></div>
+    </div>
   </div>
 
-  <h4>Part (b) — 15 marks — "Evaluate/Discuss" Structure</h4>
-  <p><span class="vi-hover"><strong>Step 1: Define</strong> key terms (brief). <strong>Step 2: Arguments FOR</strong> the view (2-3 well-developed points with theory + diagrams + examples). <strong>Step 3: Arguments AGAINST</strong> (2-3 counter-arguments — equally developed!). <strong>Step 4: Conclusion</strong> — make a judgment: "On balance...", "The effectiveness depends on...", "In the short run X, but in the long run Y...". Aim: ~600-800 words, ~30 minutes.<span class="vi-tip">🇻🇳 <b>Bước 1:</b> Định nghĩa. <b>Bước 2:</b> Luận điểm ỦNG HỘ (2-3 điểm + lý thuyết + ví dụ). <b>Bước 3:</b> Luận điểm PHẢN BÁC (2-3 — phát triển tương đương!). <b>Bước 4:</b> Kết luận: "Nhìn chung...", "Hiệu quả phụ thuộc vào...". Mục tiêu: ~600-800 từ, ~30 phút.</span></span></p>
+  <h4 class="ex-h">Paper 1 Essay Structure</h4>
+  <div class="warn-box"><strong>The single rule that decides your grade:</strong> Part (a) is <b>explain only</b> — no evaluation. Part (b) is <b>evaluate</b> — and you <i>must</i> present <b>both sides</b>, or you are capped at 9/15.</div>
 
-  <div class="def-box"><strong>Part (b) Evaluation Phrases — USE THESE:</strong><br>
-  <em>"However, this depends on..."</em> | <em>"On the other hand..."</em> | <em>"The effectiveness is limited by..."</em><br>
-  <em>"In the short run... but in the long run..."</em> | <em>"It depends on the size/type/duration of..."</em><br>
-  <em>"While [X] suggests..., [Y] argues that..."</em> | <em>"The extent to which... depends on..."</em><br>
-  <em>"On balance, [your judgment], because..."</em>
+  <div class="exam-twocol">
+    <div class="exam-step-card exam-step-a">
+      <div class="exam-step-tag">Part (a)</div>
+      <div class="exam-step-marks">10 marks · ~15 min · ~350–450 words</div>
+      <ol class="exam-step-list">
+        <li><b>Define</b> the key terms (1–2 sentences). Free marks — never skip.</li>
+        <li><b>Draw a diagram</b> — title, labelled axes, original &amp; shifted curves, equilibrium, arrows.</li>
+        <li><b>Explain the chain of reasoning</b> through the diagram: cause → curve shifts → new P / Q / GDP.</li>
+        <li><b>Real-world example</b> in 1–2 sentences — country, year, figures.</li>
+      </ol>
+      <div class="exam-template"><span class="exam-template-tag">Sentence stems</span>
+        <p>"<i>[Term] is defined as…</i>"<br>"<i>As shown in Figure 1, …</i>"<br>"<i>When [cause], [curve] shifts [direction], leading to…</i>"<br>"<i>For example, in Vietnam in 2022, …</i>"</p>
+      </div>
+    </div>
+
+    <div class="exam-step-card exam-step-b">
+      <div class="exam-step-tag exam-step-tag-b">Part (b)</div>
+      <div class="exam-step-marks">15 marks · ~30 min · ~600–800 words</div>
+      <ol class="exam-step-list">
+        <li><b>Define</b> key terms briefly.</li>
+        <li><b>Arguments FOR</b> — 2–3 well-developed points, each with theory + diagram + example.</li>
+        <li><b>Arguments AGAINST</b> — 2–3 counter-arguments, equally developed.</li>
+        <li><b>Reasoned conclusion</b> — make a judgment: <i>"On balance…"</i>, <i>"It depends on…"</i>, <i>"Short run vs long run…"</i></li>
+      </ol>
+      <div class="exam-template"><span class="exam-template-tag">Evaluation phrases</span>
+        <p>"However, this depends on…" · "On the other hand…" · "The effectiveness is limited by…" · "In the short run … but in the long run …" · "While X suggests …, Y argues that …" · "On balance, [judgment] because …"</p>
+      </div>
+    </div>
   </div>
 
-  <div class="tip-box">The #1 mistake students make: writing a one-sided answer for Part (b). Even if you agree with the view, you MUST explain why someone might disagree. If you only present one side → max 9/15. A balanced answer with a justified conclusion → 13-15/15.</div>
+  <div class="tip-box">The #1 mistake: <b>one-sided answers in Part (b)</b>. Even if you agree with the view in the question, you must explain why someone might disagree — otherwise the marker caps you at 9/15. A balanced answer with a justified conclusion lands 13–15/15.</div>
 
-  <h4>Paper 2 — Data Response Tips</h4>
-  <p><span class="vi-hover"><strong>Read the data carefully</strong> — highlight key numbers, trends, changes. <strong>Use the data in your answers</strong> — quote specific figures: "As shown in Table 1, GDP grew by 3.2% in 2022...". <strong>Calculate when asked:</strong> PED, multiplier, tariff revenue, etc. <strong>Final question is always evaluative</strong> — use same FOR/AGAINST/CONCLUDE structure as Paper 1(b). <strong>Don't ignore the extract</strong> — examiners want you to connect theory to the given data.<span class="vi-tip">🇻🇳 Đọc dữ liệu kỹ lưỡng — nêu bật những con số, xu hướng, sự thay đổi quan trọng. Sử dụng dữ liệu trong câu trả lời — trích dẫn những con số cụ thể. Tính toán khi được yêu cầu (PED, nhân số Keynes, tổng doanh thu thuế,...). Câu hỏi cuối cùng luôn yêu cầu đánh giá — dùng cấu trúc THUẬN/CHỐNG/KẾT LUẬN như Paper 1(b). Đừng bỏ qua tài liệu cho trước — giáo viên chấm muốn bạn kết nối lý thuyết với dữ liệu được cung cấp.</span></span></p>
-
-  <h4>Paper 3 — HL Extension Tips</h4>
-  <p><span class="vi-hover">Paper 3 tests HL-only content: <strong>Theory of the Firm</strong> (perfect competition, monopoly, monopolistic competition, oligopoly, price discrimination, efficiency), <strong>Keynesian Multiplier</strong> (calculations, negative multiplier), and <strong>quantitative skills</strong> (calculating PED, tariff effects, terms of trade). Show ALL working clearly — you get marks for method even if the final answer is wrong.<span class="vi-tip">🇻🇳 Paper 3 kiểm tra kiến thức chỉ dành cho HL: Lý thuyết của Công ty (cạnh tranh hoàn hảo, độc quyền, cạnh tranh độc quyền, chiếc xe, phân biệt giá, hiệu quả), Nhân số Keynes (tính toán, nhân số âm), và kỹ năng lượng hoá (tính PED, tác động của thuế, điều khoản giao dịch). Hiển thị tất cả các bước tính toán rõ ràng — bạn sẽ nhận điểm cho phương pháp ngay cả khi câu trả lời cuối cùng sai.</span></span></p>
-
-  <h4>Assessment Objectives — What IB is Looking For</h4>
-  <div class="diagram-container">
-    <svg viewBox="0 0 600 200" width="600" height="200">
-      <!-- AO1 -->
-      <rect x="10" y="10" width="140" height="180" rx="10" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="2"/>
-      <text x="80" y="40" text-anchor="middle" fill="var(--accent)" font-size="14" font-weight="700">AO1</text>
-      <text x="80" y="58" text-anchor="middle" fill="var(--accent)" font-size="11">Knowledge</text>
-      <text x="80" y="85" text-anchor="middle" fill="var(--text)" font-size="10">Define terms</text>
-      <text x="80" y="100" text-anchor="middle" fill="var(--text)" font-size="10">State theories</text>
-      <text x="80" y="115" text-anchor="middle" fill="var(--text)" font-size="10">List facts</text>
-      <text x="80" y="140" text-anchor="middle" fill="var(--text2)" font-size="9">Easiest marks</text>
-      <text x="80" y="155" text-anchor="middle" fill="var(--text2)" font-size="9">— don't skip!</text>
-      <text x="80" y="178" text-anchor="middle" fill="var(--green)" font-size="11" font-weight="600">~2-3 marks</text>
-      <!-- AO2 -->
-      <rect x="160" y="10" width="140" height="180" rx="10" fill="var(--green-bg)" stroke="var(--green)" stroke-width="2"/>
-      <text x="230" y="40" text-anchor="middle" fill="var(--green)" font-size="14" font-weight="700">AO2</text>
-      <text x="230" y="58" text-anchor="middle" fill="var(--green)" font-size="11">Application</text>
-      <text x="230" y="85" text-anchor="middle" fill="var(--text)" font-size="10">Draw diagrams</text>
-      <text x="230" y="100" text-anchor="middle" fill="var(--text)" font-size="10">Use examples</text>
-      <text x="230" y="115" text-anchor="middle" fill="var(--text)" font-size="10">Apply theory</text>
-      <text x="230" y="140" text-anchor="middle" fill="var(--text2)" font-size="9">Diagram = easy</text>
-      <text x="230" y="155" text-anchor="middle" fill="var(--text2)" font-size="9">marks. Always draw!</text>
-      <text x="230" y="178" text-anchor="middle" fill="var(--green)" font-size="11" font-weight="600">~3-4 marks</text>
-      <!-- AO3 -->
-      <rect x="310" y="10" width="140" height="180" rx="10" fill="var(--orange-bg)" stroke="var(--orange)" stroke-width="2"/>
-      <text x="380" y="40" text-anchor="middle" fill="var(--orange)" font-size="14" font-weight="700">AO3</text>
-      <text x="380" y="58" text-anchor="middle" fill="var(--orange)" font-size="11">Synthesis</text>
-      <text x="380" y="85" text-anchor="middle" fill="var(--text)" font-size="10">Explain cause→effect</text>
-      <text x="380" y="100" text-anchor="middle" fill="var(--text)" font-size="10">Link theory+diagram</text>
-      <text x="380" y="115" text-anchor="middle" fill="var(--text)" font-size="10">Chain of reasoning</text>
-      <text x="380" y="140" text-anchor="middle" fill="var(--text2)" font-size="9">The "explain" part</text>
-      <text x="380" y="155" text-anchor="middle" fill="var(--text2)" font-size="9">— walk through logic</text>
-      <text x="380" y="178" text-anchor="middle" fill="var(--orange)" font-size="11" font-weight="600">~3-4 marks</text>
-      <!-- AO4 -->
-      <rect x="460" y="10" width="130" height="180" rx="10" fill="var(--red-bg)" stroke="var(--red)" stroke-width="2"/>
-      <text x="525" y="40" text-anchor="middle" fill="var(--red)" font-size="14" font-weight="700">AO4</text>
-      <text x="525" y="58" text-anchor="middle" fill="var(--red)" font-size="11">Evaluation</text>
-      <text x="525" y="85" text-anchor="middle" fill="var(--text)" font-size="10">Both sides</text>
-      <text x="525" y="100" text-anchor="middle" fill="var(--text)" font-size="10">Judgment</text>
-      <text x="525" y="115" text-anchor="middle" fill="var(--text)" font-size="10">Prioritize</text>
-      <text x="525" y="140" text-anchor="middle" fill="var(--text2)" font-size="9">Part (b) ONLY</text>
-      <text x="525" y="155" text-anchor="middle" fill="var(--text2)" font-size="9">— highest level</text>
-      <text x="525" y="178" text-anchor="middle" fill="var(--red)" font-size="11" font-weight="600">~4-5 marks</text>
-    </svg>
-    <div class="diagram-caption">AO1 (Know) → AO2 (Apply) → AO3 (Synthesize) → AO4 (Evaluate) — each level builds on the previous</div>
+  <h4 class="ex-h">Paper 2 &amp; Paper 3 — Quick Playbook</h4>
+  <div class="exam-twocol">
+    <div class="exam-mini-card">
+      <h5>Paper 2 · Data Response</h5>
+      <ul class="exam-bullets">
+        <li><b>Annotate the extract</b> first — circle data points, trends, dates.</li>
+        <li><b>Quote specific figures</b> in every answer: <i>"As shown in Table 1, GDP grew by 3.2% in 2022…"</i></li>
+        <li><b>Calculate cleanly</b> — show formula, substitution, units. Method marks count even if the final number is wrong.</li>
+        <li><b>Final question is always evaluative</b> — use the FOR / AGAINST / CONCLUDE structure of Paper 1(b).</li>
+        <li><b>Connect theory to the extract</b> in every paragraph — don't write generic textbook answers.</li>
+      </ul>
+    </div>
+    <div class="exam-mini-card">
+      <h5>Paper 3 · HL Extension</h5>
+      <ul class="exam-bullets">
+        <li><b>Theory of the Firm</b> dominates — Perfect Competition, Monopoly, Mon. Competition, Oligopoly.</li>
+        <li><b>Multiplier &amp; Phillips Curve</b> calculations are almost guaranteed.</li>
+        <li><b>Show every step</b> — even an obvious one. Method marks are generous.</li>
+        <li><b>Label diagrams precisely</b> — Q*, P*, ATCmin, kink point, etc.</li>
+        <li><b>Two compulsory questions</b> — no choice, so revise everything HL.</li>
+      </ul>
+    </div>
   </div>
 
-  <h4>Common Mistakes to Avoid</h4>
-  <p><span class="vi-hover"><strong>1. No definitions</strong> — always define key terms at the start (free marks!). <strong>2. Diagram without explanation</strong> — a diagram alone gets few marks; you must explain it in words. <strong>3. One-sided evaluation</strong> — Part (b) must have arguments for AND against. <strong>4. No real-world examples</strong> — examples show application (AO2) and strengthen your argument. <strong>5. Ignoring the command term</strong> — "explain" ≠ "evaluate" ≠ "discuss" (see Command Terms below). <strong>6. Running out of time</strong> — practice timing: ~15 min for (a), ~30 min for (b), 5 min planning.<span class="vi-tip">🇻🇳 1. Không có định nghĩa — luôn định nghĩa các thuật ngữ chính ở đầu (điểm miễn phí!). 2. Biểu đồ không giải thích — biểu đồ độc lập chỉ nhận ít điểm; bạn phải giải thích bằng lời. 3. Đánh giá một chiều — Phần (b) phải có lập luận cả ủng hộ lẫn phản đối. 4. Không có ví dụ thực tế — ví dụ thể hiện ứng dụng (AO2) và tăng cường lập luận. 5. Bỏ qua thuật ngữ lệnh — "explain" ≠ "evaluate" ≠ "discuss". 6. Hết thời gian — luyện tập thời gian: ~15 phút cho (a), ~30 phút cho (b), 5 phút lập kế hoạch.</span></span></p>
+  <h4 class="ex-h">Assessment Objectives — What Examiners Reward</h4>
+  <div class="ao-grid">
+    <div class="ao-card ao-1">
+      <div class="ao-tag">AO1</div>
+      <h5>Knowledge &amp; Understanding</h5>
+      <p>Definitions, theories, terminology. The easiest marks — never skip the definition.</p>
+      <div class="ao-share">~2–3 marks</div>
+    </div>
+    <div class="ao-card ao-2">
+      <div class="ao-tag">AO2</div>
+      <h5>Application &amp; Analysis</h5>
+      <p>Diagrams, real-world examples, applying theory to a specific case.</p>
+      <div class="ao-share">~3–4 marks</div>
+    </div>
+    <div class="ao-card ao-3">
+      <div class="ao-tag">AO3</div>
+      <h5>Synthesis</h5>
+      <p>Chain of reasoning: cause → mechanism → effect, linking theory to the diagram to the example.</p>
+      <div class="ao-share">~3–4 marks</div>
+    </div>
+    <div class="ao-card ao-4">
+      <div class="ao-tag">AO4</div>
+      <h5>Evaluation</h5>
+      <p>Both sides, prioritisation, judgment. Only assessed in Part (b) and final P2 question — but it's where top grades are made.</p>
+      <div class="ao-share">~4–5 marks</div>
+    </div>
+  </div>
+
+  <h4 class="ex-h">Six Common Mistakes — Lose-Mark Hit List</h4>
+  <div class="mistake-grid">
+    <div class="mistake-card"><div class="mistake-no">01</div><h5>No definitions</h5><p>Define every key term in the question stem. These are guaranteed AO1 marks — don't leave them on the table.</p></div>
+    <div class="mistake-card"><div class="mistake-no">02</div><h5>Diagram with no explanation</h5><p>A diagram alone earns very little. Walk the marker through it: <i>"As Q rises from Q₁ to Q₂…"</i></p></div>
+    <div class="mistake-card"><div class="mistake-no">03</div><h5>One-sided evaluation</h5><p>Part (b) needs FOR and AGAINST — equally developed. Without both, capped at 9/15.</p></div>
+    <div class="mistake-card"><div class="mistake-no">04</div><h5>No real-world examples</h5><p>Examples are AO2 marks. Use Vietnam, Korea, US, EU, OPEC — anything specific with a year and a number.</p></div>
+    <div class="mistake-card"><div class="mistake-no">05</div><h5>Ignoring the command term</h5><p><i>Explain</i> ≠ <i>Evaluate</i> ≠ <i>Discuss</i>. See the Command Terms page — using the wrong approach costs you marks even with perfect economics.</p></div>
+    <div class="mistake-card"><div class="mistake-no">06</div><h5>Running out of time</h5><p>~15 min for Part (a), ~30 min for Part (b), with 5 min upfront planning. Practise to the clock, not just the content.</p></div>
+  </div>
 </div>
 
 <!-- ==================== UNIT 0: COMMAND TERMS ==================== -->
@@ -387,34 +419,7 @@ html{scroll-behavior:smooth}
   <div class="warn-box">Understanding command terms is CRITICAL. Using the wrong approach (e.g., only explaining when asked to evaluate) will cost you marks even if your economics knowledge is perfect.</div>
 
   <div class="diagram-container">
-    <svg viewBox="0 0 700 730" width="700" height="730">
-      <style>text{font-family:'Inter',sans-serif}
-.practice-links-box{background:linear-gradient(135deg,var(--accent-bg),var(--bg2));border:2px solid var(--accent);border-radius:12px;padding:16px 20px;margin:28px 0 12px;position:relative}
-.practice-links-box::before{content:'🎯';position:absolute;top:-14px;left:16px;background:var(--bg);padding:0 8px;font-size:1.1rem}
-.practice-links-box h4{color:var(--accent);margin:0 0 10px;font-size:.95rem}
-.practice-links-box a{display:inline-block;background:var(--accent);color:#fff!important;padding:5px 12px;border-radius:6px;font-size:.82rem;margin:3px 4px;text-decoration:none;transition:all .2s}
-.practice-links-box a:hover{opacity:.85;transform:translateY(-1px)}
-.practice-links-box .q-tag{font-size:.7rem;opacity:.8;margin-left:4px}
-
-/* PRACTICE TABS */
-.practice-tabs{margin:20px 0 24px;padding:0}
-.level-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.level-tab{padding:10px 20px;border:2px solid var(--border);border-radius:10px;background:var(--bg2);color:var(--text);font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s;flex:1;min-width:120px;text-align:center}
-.level-tab:hover{border-color:var(--accent);background:var(--accent-bg)}
-.level-tab.active{border-color:var(--accent);background:var(--accent);color:#fff}
-.level-tab[data-level="sl"].active{border-color:#059669;background:#059669;color:#fff}
-.level-tab[data-level="hl"].active{border-color:#dc2626;background:#dc2626;color:#fff}
-.cat-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
-.cat-tab{padding:6px 14px;border:1px solid var(--border);border-radius:20px;background:var(--bg);color:var(--text2);font-size:.8rem;cursor:pointer;transition:all .2s}
-.cat-tab:hover{border-color:var(--accent);color:var(--accent)}
-.cat-tab.active{background:var(--accent-bg);border-color:var(--accent);color:var(--accent);font-weight:600}
-.cat-tab[data-cat="micro"].active{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
-.cat-tab[data-cat="macro"].active{background:var(--green-bg);border-color:var(--green);color:var(--green)}
-.cat-tab[data-cat="intl"].active{background:var(--orange-bg);border-color:var(--orange);color:var(--orange)}
-.cat-tab[data-cat="dev"].active{background:var(--purple-bg);border-color:var(--purple);color:var(--purple)}
-.filter-info{font-size:.82rem;color:var(--text2);padding:4px 0;font-style:italic}
-.question-card.q-hidden{display:none}
-</style>
+    <svg viewBox="0 0 700 730" width="700" height="730" style="font-family:Inter,sans-serif">
       <!-- Table header -->
       <rect x="5" y="5" width="690" height="40" rx="6" fill="var(--accent)"/>
       <text x="90" y="31" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Command Term</text>
