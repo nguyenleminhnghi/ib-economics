@@ -1298,7 +1298,84 @@ html{scroll-behavior:smooth}
   <button class="studied-btn" onclick="toggleStudied('micro-firm')">Mark as studied</button><div style="clear:both"></div>
 
   <h4>Revenue & Cost Concepts</h4>
-  <div class="formula-box">TR = P × Q &nbsp;|&nbsp; AR = TR/Q = P &nbsp;|&nbsp; MR = ΔTR/ΔQ<br>TC = FC + VC &nbsp;|&nbsp; AC = TC/Q &nbsp;|&nbsp; MC = ΔTC/ΔQ</div>
+  <div class="formula-box">TR = P × Q &nbsp;|&nbsp; AR = TR/Q = P &nbsp;|&nbsp; MR = ΔTR/ΔQ<br>TC = FC + VC &nbsp;|&nbsp; AC = TC/Q &nbsp;|&nbsp; MC = ΔTC/ΔQ &nbsp;|&nbsp; AVC = VC/Q &nbsp;|&nbsp; AFC = FC/Q</div>
+
+  <h4>Cost Curves — MC, ATC, AVC, AFC</h4>
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 340" width="480" height="340" style="font-family:Inter,sans-serif">
+      <defs><marker id="ahCC" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="var(--text)"/></marker></defs>
+      <line x1="60" y1="290" x2="450" y2="290" stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahCC)"/>
+      <line x1="60" y1="290" x2="60"  y2="20"  stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahCC)"/>
+      <text x="250" y="318" text-anchor="middle" fill="var(--text2)" font-size="12">Output (Q)</text>
+      <text x="22"  y="160" text-anchor="middle" fill="var(--text2)" font-size="12" transform="rotate(-90,22,160)">Cost per unit</text>
+
+      <!-- MC: U-shape, but rises sharply to the right. Cuts ATC and AVC at their MIN points. -->
+      <path d="M 80 200 Q 130 240, 180 195 Q 220 165, 280 130 Q 350 80, 410 35" fill="none" stroke="#dc2626" stroke-width="2.8"/>
+      <text x="415" y="38" fill="#dc2626" font-size="13" font-weight="700">MC</text>
+
+      <!-- ATC: U-shape with min at (290, 130). MC cuts ATC at min point exactly. -->
+      <path d="M 80 90 Q 130 150, 200 165 Q 245 175, 290 130 Q 360 70, 410 60" fill="none" stroke="#059669" stroke-width="2.8"/>
+      <text x="415" y="62" fill="#059669" font-size="13" font-weight="700">ATC</text>
+
+      <!-- AVC: U-shape, lower than ATC by AFC, min at (245, 175). MC cuts AVC at its min. -->
+      <path d="M 80 200 Q 130 230, 180 200 Q 215 185, 245 175 Q 320 145, 410 100" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+      <text x="415" y="102" fill="#7c3aed" font-size="13" font-weight="700">AVC</text>
+
+      <!-- AFC: continuously falling rectangular hyperbola -->
+      <path d="M 80 145 Q 130 220, 200 250 Q 280 268, 410 278" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="415" y="280" fill="#64748b" font-size="13" font-weight="700">AFC</text>
+
+      <!-- Min ATC -->
+      <circle cx="290" cy="130" r="4.5" fill="#059669" stroke="var(--bg2)" stroke-width="2"/>
+      <text x="296" y="124" fill="#059669" font-size="10" font-weight="700">min ATC</text>
+      <text x="296" y="138" fill="var(--text2)" font-size="9">(productive efficiency)</text>
+
+      <!-- Min AVC -->
+      <circle cx="245" cy="175" r="4" fill="#7c3aed" stroke="var(--bg2)" stroke-width="2"/>
+      <text x="190" y="173" fill="#7c3aed" font-size="9" font-weight="600">min AVC</text>
+
+      <!-- Annotation showing MC cuts ATC and AVC at their minima -->
+      <text x="80" y="40" fill="var(--text)" font-size="10" font-weight="600">Key rule: MC cuts ATC and AVC at their <i>minimum</i> points.</text>
+      <text x="80" y="54" fill="var(--text2)" font-size="9">If MC &lt; ATC ⇒ ATC falling. If MC &gt; ATC ⇒ ATC rising.</text>
+    </svg>
+    <div class="diagram-caption">All four cost curves on one chart. AFC always falls (fixed cost ÷ Q). AVC and ATC are U-shaped. MC slices through both at their minimum. Productive efficiency is achieved at min ATC.</div>
+  </div>
+
+  <h4>Economies vs Diseconomies of Scale (LRATC)</h4>
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 320" width="480" height="320" style="font-family:Inter,sans-serif">
+      <defs><marker id="ahES" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="var(--text)"/></marker></defs>
+      <line x1="60" y1="280" x2="450" y2="280" stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahES)"/>
+      <line x1="60" y1="280" x2="60"  y2="20"  stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahES)"/>
+      <text x="250" y="308" text-anchor="middle" fill="var(--text2)" font-size="12">Output (Q)</text>
+      <text x="22"  y="155" text-anchor="middle" fill="var(--text2)" font-size="12" transform="rotate(-90,22,155)">Long-run average cost</text>
+
+      <!-- Multiple SRATC envelopes (faded) -->
+      <path d="M 70 130 Q 100 200 145 175 Q 170 160 195 195" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.6"/>
+      <path d="M 130 110 Q 170 170 215 160 Q 245 155 275 200" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.6"/>
+      <path d="M 200 105 Q 240 160 270 150 Q 300 145 335 175" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.6"/>
+      <path d="M 290 115 Q 320 160 350 175 Q 380 195 415 205" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.6"/>
+
+      <!-- LRATC envelope: U-shape with min at Q* -->
+      <path d="M 70 130 Q 180 220, 270 150 Q 360 95, 430 200" fill="none" stroke="#2563eb" stroke-width="3"/>
+      <text x="430" y="195" fill="#2563eb" font-size="13" font-weight="700">LRATC</text>
+
+      <!-- Min point Q* -->
+      <circle cx="270" cy="150" r="5" fill="#059669" stroke="var(--bg2)" stroke-width="2"/>
+      <line x1="270" y1="150" x2="270" y2="280" stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="270" y="295" text-anchor="middle" fill="#059669" font-size="11" font-weight="700">Q* (MES)</text>
+
+      <!-- Zone labels -->
+      <path d="M 80 250 L 250 250" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#ahES)"/>
+      <text x="165" y="240" text-anchor="middle" fill="#059669" font-size="11" font-weight="700">Economies of scale</text>
+      <text x="165" y="262" text-anchor="middle" fill="var(--text2)" font-size="9">↑Q ⇒ ↓LRATC (specialisation, bulk buying)</text>
+
+      <path d="M 420 250 L 290 250" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ahES)"/>
+      <text x="365" y="240" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="700">Diseconomies</text>
+      <text x="365" y="262" text-anchor="middle" fill="var(--text2)" font-size="9">↑Q ⇒ ↑LRATC (bureaucracy, coordination)</text>
+    </svg>
+    <div class="diagram-caption">LRATC is the <b>envelope</b> of all the short-run ATCs. Falling section = economies of scale (mass production, specialisation, bulk discounts); rising section = diseconomies (bureaucracy, communication failure, X-inefficiency). The minimum point Q* is the <b>minimum efficient scale</b> — the smallest output a firm needs to be competitive.</div>
+  </div>
 
   <h4>Perfect Competition vs Monopoly</h4>
   <div class="diagram-container">
@@ -1362,10 +1439,100 @@ html{scroll-behavior:smooth}
   <h4>Monopolistic Competition</h4>
   <p><span class="vi-hover">Characteristics: many firms, <em>differentiated</em> products (branding, quality, design), low barriers to entry, some price-setting power. <strong>Short run:</strong> can earn abnormal profit (like monopoly). <strong>Long run:</strong> only normal profit — new firms attracted by abnormal profits enter the market, shifting each existing firm's demand curve to the left until P = AC.<span class="vi-tip">🇻🇳 <b>Cạnh tranh độc quyền:</b> Nhiều hãng, sản phẩm <em>khác biệt</em> (thương hiệu, chất lượng). Ngắn hạn: lợi nhuận siêu ngạch. Dài hạn: chỉ lợi nhuận bình thường (hãng mới gia nhập → cầu mỗi hãng giảm).</span></span></p>
 
-  <h4>Oligopoly</h4>
-  <p><span class="vi-hover">Characteristics: few dominant firms, high barriers to entry, <strong>interdependence</strong> between firms (each firm's decisions affect the others), products may be homogeneous (oil) or differentiated (cars).<span class="vi-tip">🇻🇳 <b>Độc quyền nhóm:</b> Ít hãng thống trị, rào cản gia nhập cao, <b>phụ thuộc lẫn nhau</b> (quyết định của mỗi hãng ảnh hưởng hãng khác), sản phẩm có thể đồng nhất hoặc khác biệt.</span></span></p>
+  <h4>Oligopoly — Kinked Demand Curve</h4>
+  <p><span class="vi-hover">Characteristics: few dominant firms, high barriers to entry, <strong>interdependence</strong> between firms (each firm's decisions affect the others), products may be homogeneous (oil) or differentiated (cars).<span class="vi-tip">🇻🇳 <b>Độc quyền nhóm:</b> Ít hãng thống trị, rào cản gia nhập cao, <b>phụ thuộc lẫn nhau</b>.</span></span></p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 340" width="480" height="340" style="font-family:Inter,sans-serif">
+      <defs><marker id="ahK" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="var(--text)"/></marker></defs>
+      <line x1="60" y1="290" x2="450" y2="290" stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahK)"/>
+      <line x1="60" y1="290" x2="60"  y2="30"  stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahK)"/>
+      <text x="250" y="318" text-anchor="middle" fill="var(--text2)" font-size="12">Quantity (Q)</text>
+      <text x="22"  y="160" text-anchor="middle" fill="var(--text2)" font-size="12" transform="rotate(-90,22,160)">Price (P)</text>
+
+      <!-- Kink at (250, 150). Upper segment elastic (gentle slope), lower segment inelastic (steep). -->
+      <line x1="80"  y1="80"  x2="250" y2="150" stroke="#2563eb" stroke-width="2.8"/>
+      <line x1="250" y1="150" x2="350" y2="270" stroke="#2563eb" stroke-width="2.8"/>
+      <text x="355" y="272" fill="#2563eb" font-size="13" font-weight="700">D (kinked)</text>
+
+      <!-- MR with discontinuous gap at Q=250 -->
+      <line x1="80"  y1="120" x2="250" y2="190" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="6,3"/>
+      <line x1="250" y1="220" x2="320" y2="260" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="6,3"/>
+      <line x1="250" y1="190" x2="250" y2="220" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="2,2"/>
+      <text x="325" y="262" fill="#dc2626" font-size="12" font-weight="700">MR</text>
+
+      <!-- The "discontinuity gap" -->
+      <rect x="245" y="190" width="14" height="30" fill="#fbbf24" opacity="0.25" stroke="#d97706" stroke-width="1" rx="2"/>
+      <text x="270" y="210" fill="#d97706" font-size="10" font-weight="600">MC may shift</text>
+      <text x="270" y="222" fill="#d97706" font-size="10" font-weight="600">in this gap →</text>
+      <text x="270" y="234" fill="#d97706" font-size="10">price stays at P_K</text>
+
+      <!-- Kink point -->
+      <circle cx="250" cy="150" r="5" fill="#059669" stroke="var(--bg2)" stroke-width="2"/>
+      <line x1="60"  y1="150" x2="250" y2="150" stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="250" y1="150" x2="250" y2="290" stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="38"  y="154" fill="#059669" font-size="11" font-weight="700">P_K</text>
+      <text x="250" y="304" text-anchor="middle" fill="#059669" font-size="11" font-weight="700">Q_K</text>
+
+      <!-- Annotations -->
+      <text x="120" y="65" fill="#2563eb" font-size="10" font-weight="600">Elastic above P_K</text>
+      <text x="120" y="78" fill="var(--text2)" font-size="9">↑ price → others don't follow → lose customers</text>
+      <text x="285" y="265" fill="#2563eb" font-size="10" font-weight="600">Inelastic below P_K</text>
+      <text x="285" y="278" fill="var(--text2)" font-size="9">↓ price → others follow → small gain</text>
+    </svg>
+    <div class="diagram-caption">Kinked demand curve — at the prevailing price P_K the demand curve has a <b>kink</b> (elastic above, inelastic below). The MR curve has a vertical <b>discontinuity</b> directly below the kink, so MC can move within that gap without changing the profit-maximizing P or Q ⇒ explains the <b>price rigidity</b> typical of oligopolies.</div>
+  </div>
   <p><span class="vi-hover"><strong>Kinked demand curve theory:</strong> If one firm raises its price, others don't follow → big loss of customers (elastic demand above current price). If it lowers its price, others match immediately → small gain in customers (inelastic demand below current price). This creates a "kink" at the current price and explains <strong>price rigidity</strong> in oligopolies.<span class="vi-tip">🇻🇛 <b>Lý thuyết đường cầu uốn cong:</b> Nếu một hãng tăng giá, hãng khác không theo → mất nhiều khách hàng (cầu co dãn). Nếu hạ giá, hãng khác theo ngay → lợi ít khách (cầu không co dãn). Tạo thành "góc gập" giải thích <b>tính cứng ngắc của giá</b> trong độc quyền nhóm.</span></span></p>
-  <p><span class="vi-hover"><strong>Game Theory & Prisoner's Dilemma:</strong> Firms are interdependent. The Prisoner's Dilemma shows why firms may not cooperate even when collusion would maximize joint profits. Each firm has a <strong>dominant strategy</strong> to compete (lower prices), leading to a non-cooperative equilibrium that is worse for both firms than if they had colluded. Collusion (formal = cartel like OPEC, informal = tacit) is often illegal.<span class="vi-tip">🇻🇳 <b>Lý thuyết trò chơi & Bài toán Tù nhân:</b> Hãng phụ thuộc lẫn nhau. Bài toán Tù nhân giải thích tại sao hãng không hợp tác dù hợp tác sẽ tối đa hóa lợi nhuận chung. Mỗi hãng có <b>chiến lược thượng phong</b> cạnh tranh (hạ giá) → cân bằng không hợp tác (tệ hơn hợp tác). Thông đồng (chính thức = cartel, né lủi = im lặng) thường bất hợp pháp.</span></span></p>
+  <h4>Game Theory & the Prisoner's Dilemma</h4>
+  <p><span class="vi-hover">Firms in oligopoly are interdependent. The Prisoner's Dilemma shows why firms may not cooperate even when collusion would maximise joint profits. Each firm has a <strong>dominant strategy</strong> to compete (cut prices), leading to a non-cooperative <strong>Nash equilibrium</strong> that is worse for both than collusion. Formal collusion (cartel, e.g. OPEC) is illegal in most countries.<span class="vi-tip">🇻🇳 <b>Lý thuyết trò chơi & Tù nhân:</b> Hãng phụ thuộc lẫn nhau. Mỗi hãng có chiến lược thượng phong là cạnh tranh (hạ giá) → cân bằng Nash không hợp tác, tệ hơn cho cả hai so với nếu họ thông đồng.</span></span></p>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 520 320" width="520" height="320" style="font-family:Inter,sans-serif">
+      <!-- 2x2 payoff matrix: Firm A (rows) vs Firm B (columns). Each cell shows (A's payoff, B's payoff). -->
+      <text x="260" y="22" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="700">Prisoner's Dilemma — Two firms choosing prices</text>
+      <text x="260" y="40" text-anchor="middle" fill="var(--text2)" font-size="11">Each cell shows (Firm A profit, Firm B profit) in millions</text>
+
+      <!-- Column headers -->
+      <text x="260" y="68" text-anchor="middle" fill="var(--text2)" font-size="11" font-style="italic">Firm B's choice</text>
+      <rect x="170" y="78" width="155" height="32" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="1.2" rx="6"/>
+      <text x="247" y="98" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="700">Keep high price</text>
+      <rect x="335" y="78" width="155" height="32" fill="var(--red-bg)" stroke="var(--red)" stroke-width="1.2" rx="6"/>
+      <text x="412" y="98" text-anchor="middle" fill="var(--red)" font-size="12" font-weight="700">Cut price</text>
+
+      <!-- Row headers -->
+      <text x="40" y="170" text-anchor="middle" fill="var(--text2)" font-size="11" font-style="italic" transform="rotate(-90,40,170)">Firm A's choice</text>
+      <rect x="60" y="120" width="105" height="80" fill="var(--accent-bg)" stroke="var(--accent)" stroke-width="1.2" rx="6"/>
+      <text x="112" y="155" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="700">Keep high</text>
+      <text x="112" y="170" text-anchor="middle" fill="var(--accent)" font-size="12" font-weight="700">price</text>
+      <rect x="60" y="210" width="105" height="80" fill="var(--red-bg)" stroke="var(--red)" stroke-width="1.2" rx="6"/>
+      <text x="112" y="245" text-anchor="middle" fill="var(--red)" font-size="12" font-weight="700">Cut</text>
+      <text x="112" y="262" text-anchor="middle" fill="var(--red)" font-size="12" font-weight="700">price</text>
+
+      <!-- Cells -->
+      <!-- Both keep high: (10, 10) - cooperative outcome -->
+      <rect x="170" y="120" width="155" height="80" fill="#ecfdf5" stroke="#059669" stroke-width="2" rx="6"/>
+      <text x="247" y="148" text-anchor="middle" fill="#059669" font-size="14" font-weight="700">A: 10 | B: 10</text>
+      <text x="247" y="168" text-anchor="middle" fill="#059669" font-size="10" font-style="italic">Cooperate (collude)</text>
+      <text x="247" y="183" text-anchor="middle" fill="#059669" font-size="10">Best joint outcome</text>
+
+      <!-- A keeps, B cuts: (2, 15) - B cheats, B wins -->
+      <rect x="335" y="120" width="155" height="80" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2" rx="6"/>
+      <text x="412" y="148" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="700">A: 2 | B: 15</text>
+      <text x="412" y="168" text-anchor="middle" fill="var(--text2)" font-size="10" font-style="italic">A loses customers</text>
+
+      <!-- A cuts, B keeps: (15, 2) - A cheats, A wins -->
+      <rect x="170" y="210" width="155" height="80" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2" rx="6"/>
+      <text x="247" y="238" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="700">A: 15 | B: 2</text>
+      <text x="247" y="258" text-anchor="middle" fill="var(--text2)" font-size="10" font-style="italic">A steals customers</text>
+
+      <!-- Both cut: (5, 5) - Nash equilibrium, price war -->
+      <rect x="335" y="210" width="155" height="80" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="6"/>
+      <text x="412" y="238" text-anchor="middle" fill="#d97706" font-size="14" font-weight="700">A: 5 | B: 5</text>
+      <text x="412" y="258" text-anchor="middle" fill="#d97706" font-size="10" font-style="italic">Nash equilibrium</text>
+      <text x="412" y="273" text-anchor="middle" fill="#d97706" font-size="10" font-weight="600">Price war — both worse off</text>
+    </svg>
+    <div class="diagram-caption">Each firm's <b>dominant strategy</b> is to cut prices (whatever the rival does, cutting yields more). Both rationally cut ⇒ Nash equilibrium of (5, 5) — strictly worse than the cooperative (10, 10). This is why collusion is unstable and why price wars happen.</div>
+  </div>
 
   <h4>Price Discrimination</h4>
   <p><span class="vi-hover">Charging different prices to different consumers for the <em>same</em> product (not based on cost differences). <strong>Conditions needed:</strong> some market power, ability to separate markets, prevention of resale. <strong>Types:</strong> 1st degree (each consumer pays maximum willingness to pay), 2nd degree (bulk discounts), 3rd degree (different groups — student vs adult tickets, peak vs off-peak).<span class="vi-tip">🇻🇳 <b>Phân biệt giá:</b> Tính giá khác nhau cho người tiêu dùng khác nhau cho cùng sản phẩm. <b>Điều kiện:</b> có quyền lực thị trường, tách biệt được thị trường, ngăn bán lại. <b>Loại:</b> Bậc 1 (mỗi người trả giá tối đa họ chấp nhận), Bậc 2 (giảm giá theo số lượng), Bậc 3 (nhóm khác nhau — vé sinh viên vs người lớn).</span></span></p>
@@ -1403,6 +1570,58 @@ html{scroll-behavior:smooth}
   </div>
 
   <div class="formula-box">GDP (Expenditure) = C + I + G + (X − M) &nbsp;&nbsp;|&nbsp;&nbsp; Real GDP = Nominal GDP ÷ Deflator × 100</div>
+
+  <h4>Circular Flow of Income</h4>
+  <p><span class="vi-hover">The economy is a closed loop: <strong>households</strong> supply factors (labour, capital, land) to <strong>firms</strong>; firms pay <strong>incomes</strong> in return; households use that income to buy <strong>goods &amp; services</strong> from firms. Three "leakages" exit the loop — <strong>S</strong>avings, <strong>T</strong>axes, im<strong>p</strong>orts (M) — and three matching "injections" re-enter — <strong>I</strong>nvestment, <strong>G</strong>overnment spending, e<strong>X</strong>ports.<span class="vi-tip">🇻🇳 <b>Vòng chu chuyển thu nhập:</b> Hộ gia đình cung yếu tố sản xuất → DN trả thu nhập → hộ chi tiêu mua hàng từ DN. Rò rỉ: S, T, M. Tiêm: I, G, X. Nếu I+G+X &gt; S+T+M → kinh tế mở rộng.</span></span></p>
+  <div class="diagram-container">
+    <svg viewBox="0 0 540 340" width="540" height="340" style="font-family:Inter,sans-serif">
+      <defs><marker id="ahCF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="var(--text)"/></marker></defs>
+      <!-- Households (left) -->
+      <ellipse cx="100" cy="170" rx="75" ry="42" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="100" y="166" text-anchor="middle" fill="#1d4ed8" font-size="13" font-weight="700">Households</text>
+      <text x="100" y="182" text-anchor="middle" fill="#1d4ed8" font-size="10">supply factors, consume</text>
+      <!-- Firms (right) -->
+      <ellipse cx="440" cy="170" rx="75" ry="42" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+      <text x="440" y="166" text-anchor="middle" fill="#dc2626" font-size="13" font-weight="700">Firms</text>
+      <text x="440" y="182" text-anchor="middle" fill="#dc2626" font-size="10">produce, hire, invest</text>
+
+      <!-- Top arrow: Goods & services from firms to households -->
+      <path d="M 365 145 Q 270 100, 175 145" fill="none" stroke="#059669" stroke-width="2.2" marker-end="url(#ahCF)"/>
+      <text x="270" y="92" text-anchor="middle" fill="#059669" font-size="11" font-weight="700">Goods &amp; services</text>
+      <!-- Just below: Consumption spending from households to firms -->
+      <path d="M 175 165 Q 270 130, 365 165" fill="none" stroke="#059669" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#ahCF)"/>
+      <text x="270" y="124" text-anchor="middle" fill="#059669" font-size="10">Consumption (C) →</text>
+
+      <!-- Bottom arrow: Factor services hh → firms -->
+      <path d="M 175 195 Q 270 240, 365 195" fill="none" stroke="#7c3aed" stroke-width="2.2" marker-end="url(#ahCF)"/>
+      <text x="270" y="252" text-anchor="middle" fill="#7c3aed" font-size="11" font-weight="700">Factors of production</text>
+      <!-- Just above: incomes -->
+      <path d="M 365 215 Q 270 250, 175 215" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#ahCF)"/>
+      <text x="270" y="220" text-anchor="middle" fill="#7c3aed" font-size="10">Wages, rent, interest, profit (Y)</text>
+
+      <!-- Leakages (down) -->
+      <text x="270" y="290" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="700">Leakages: S + T + M ⤓</text>
+      <!-- Injections (up) -->
+      <text x="270" y="22" text-anchor="middle" fill="#059669" font-size="11" font-weight="700">⤒ Injections: I + G + X</text>
+
+      <!-- Bottom boxes for leakages -->
+      <rect x="70"  y="298" width="80" height="32" fill="var(--bg3)" stroke="#dc2626" stroke-width="1" rx="6"/>
+      <text x="110" y="318" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Savings (S)</text>
+      <rect x="230" y="298" width="80" height="32" fill="var(--bg3)" stroke="#dc2626" stroke-width="1" rx="6"/>
+      <text x="270" y="318" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Taxes (T)</text>
+      <rect x="390" y="298" width="80" height="32" fill="var(--bg3)" stroke="#dc2626" stroke-width="1" rx="6"/>
+      <text x="430" y="318" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Imports (M)</text>
+
+      <!-- Top boxes for injections -->
+      <rect x="70"  y="34" width="80" height="32" fill="var(--bg3)" stroke="#059669" stroke-width="1" rx="6"/>
+      <text x="110" y="54" text-anchor="middle" fill="#059669" font-size="11" font-weight="600">Investment (I)</text>
+      <rect x="230" y="34" width="80" height="32" fill="var(--bg3)" stroke="#059669" stroke-width="1" rx="6"/>
+      <text x="270" y="54" text-anchor="middle" fill="#059669" font-size="11" font-weight="600">Gov (G)</text>
+      <rect x="390" y="34" width="80" height="32" fill="var(--bg3)" stroke="#059669" stroke-width="1" rx="6"/>
+      <text x="430" y="54" text-anchor="middle" fill="#059669" font-size="11" font-weight="600">Exports (X)</text>
+    </svg>
+    <div class="diagram-caption">Five-sector circular flow. <b>Equilibrium:</b> total injections = total leakages ⇒ S + T + M = I + G + X. If injections &gt; leakages, the economy <b>expands</b>; if leakages &gt; injections, it <b>contracts</b>.</div>
+  </div>
 
   <h4>Three Approaches to Measuring GDP</h4>
   <p><span class="vi-hover"><strong>1. Expenditure approach:</strong> C + I + G + (X−M). <strong>2. Income approach:</strong> Sum of all factor incomes — wages, rent, interest, profit. <strong>3. Output approach:</strong> Sum of value added at each stage of production. All three should give the same GDP figure.<span class="vi-tip">🇻🇳 <b>3 cách đo GDP:</b> (1) <b>Chi tiêu:</b> C+I+G+(X-M). (2) <b>Thu nhập:</b> Tổng thu nhập từ các yếu tố sản xuất — lương, tiền thuê, lãi, lợi nhuận. (3) <b>Sản lượng:</b> Tổng giá trị gia tăng ở mỗi giai đoạn sản xuất.</span></span></p>
@@ -1676,6 +1895,42 @@ html{scroll-behavior:smooth}
   <h4>Budget Deficit &amp; National Debt</h4>
   <p><span class="vi-hover"><strong>Budget deficit</strong> = G > T (government spends more than it collects). <strong>Budget surplus</strong> = T > G. <strong>National debt</strong> = accumulated deficits over time. <strong>Automatic stabilizers:</strong> Tax revenue and welfare spending automatically adjust — during recession, tax revenue ↓ and unemployment benefits ↑ → automatically expansionary without new policy.<span class="vi-tip">🇻🇳 <b>Thâm hụt ngân sách:</b> G > T (chi > thu). <b>Thặng dư:</b> T > G. <b>Nợ công:</b> tích lũy thâm hụt qua thời gian. <b>Bộ ổn định tự động:</b> Thuế & phúc lợi tự điều chỉnh — suy thoái → thuế ↓, trợ cấp ↑ → tự động mở rộng.</span></span></p>
 
+  <h4>The Laffer Curve</h4>
+  <p><span class="vi-hover">The <strong>Laffer Curve</strong> shows the relationship between the <em>tax rate</em> and total <em>tax revenue</em>. At a 0% tax rate the government collects nothing; at a 100% tax rate nobody bothers to work or report income, so revenue is again zero. Somewhere between lies an optimum rate t* that maximises revenue. Beyond t*, raising the rate <i>reduces</i> revenue (people work less, evade more, move abroad).<span class="vi-tip">🇻🇳 <b>Đường Laffer</b> — quan hệ giữa thuế suất và tổng thu ngân sách. 0% và 100% đều thu 0. Có một tỷ lệ tối ưu t* tối đa hóa thu. Vượt t*, tăng thuế lại làm <i>giảm</i> thu.</span></span></p>
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 320" width="480" height="320" style="font-family:Inter,sans-serif">
+      <defs><marker id="ahLF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="var(--text)"/></marker></defs>
+      <line x1="60" y1="280" x2="450" y2="280" stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahLF)"/>
+      <line x1="60" y1="280" x2="60"  y2="20"  stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahLF)"/>
+      <text x="250" y="308" text-anchor="middle" fill="var(--text2)" font-size="12">Tax rate (%)</text>
+      <text x="22"  y="155" text-anchor="middle" fill="var(--text2)" font-size="12" transform="rotate(-90,22,155)">Tax revenue</text>
+      <text x="60"  y="296" text-anchor="middle" fill="var(--text2)" font-size="10">0%</text>
+      <text x="430" y="296" text-anchor="middle" fill="var(--text2)" font-size="10">100%</text>
+      <text x="245" y="296" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="700">t*</text>
+
+      <!-- Inverted parabola y = 280 - 4*(x-60)*(x-430)/385  Peak at x=245 -->
+      <path d="M 60 280 Q 245 -10 430 280" fill="none" stroke="#2563eb" stroke-width="3"/>
+      <line x1="245" y1="50" x2="245" y2="280" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="60"  y1="50" x2="245" y2="50"  stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+      <circle cx="245" cy="50" r="5" fill="#dc2626" stroke="var(--bg2)" stroke-width="2"/>
+      <text x="38" y="54" fill="#dc2626" font-size="11" font-weight="700">R_max</text>
+
+      <!-- Two equal-revenue points A (lower rate) and B (higher rate) -->
+      <circle cx="155" cy="155" r="4" fill="#059669"/>
+      <text x="125" y="148" fill="#059669" font-size="11" font-weight="700">A</text>
+      <circle cx="335" cy="155" r="4" fill="#7c3aed"/>
+      <text x="338" y="148" fill="#7c3aed" font-size="11" font-weight="700">B</text>
+      <line x1="155" y1="155" x2="335" y2="155" stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <!-- Labels for the two zones -->
+      <text x="142" y="245" text-anchor="middle" fill="#059669" font-size="10" font-weight="600">Zone 1 — normal</text>
+      <text x="142" y="258" text-anchor="middle" fill="var(--text2)" font-size="9">↑ rate ⇒ ↑ revenue</text>
+      <text x="345" y="245" text-anchor="middle" fill="#7c3aed" font-size="10" font-weight="600">Zone 2 — prohibitive</text>
+      <text x="345" y="258" text-anchor="middle" fill="var(--text2)" font-size="9">↑ rate ⇒ ↓ revenue</text>
+    </svg>
+    <div class="diagram-caption">Laffer curve — A and B raise the <i>same</i> revenue, but A taxes less and so produces more growth, more incentive and less evasion. The curve is the theoretical justification for some tax cuts paying for themselves.</div>
+  </div>
+
   <h4>Strengths &amp; Limitations of Fiscal Policy</h4>
   <p><span class="vi-hover"><strong>Strengths:</strong> Can target specific sectors or regions, directly affects AD (G is a component of AD), can redistribute income, effective in deep recessions when monetary policy fails (liquidity trap). <strong>Limitations:</strong> Time lags (recognition, decision, implementation), political constraints, <strong>crowding out</strong> (government borrowing → ↑interest rates → ↓private investment), budget deficit concerns, may cause inflation if economy near full capacity, difficulty of reversing.<span class="vi-tip">🇻🇳 <b>Ưu điểm:</b> Nhắm mục tiêu ngành/vùng, tác động trực tiếp AD, phân phối lại thu nhập, hiệu quả khi suy thoái sâu (bẫy thanh khoản). <b>Hạn chế:</b> Chậm trễ thời gian, ràng buộc chính trị, hiệu ứng chiếm chỗ (vay chính phủ → lãi ↑ → đầu tư tư ↓), nợ công, lạm phát, khó đảo ngược.</span></span></p>
 
@@ -1703,6 +1958,112 @@ html{scroll-behavior:smooth}
   <p><span class="vi-hover"><strong>1. Interest rates</strong> (most common tool): Central bank sets base rate that influences all borrowing/lending rates. <strong>2. Open Market Operations (OMO):</strong> Central bank buys/sells government bonds to control money supply. Buy bonds → inject money → ↓rates. <strong>3. Reserve requirements:</strong> Minimum reserves banks must hold — ↑reserve ratio → less lending → ↓money supply. <strong>4. Quantitative Easing (QE):</strong> When interest rates are already at/near 0%, central bank buys large amounts of financial assets to inject money and lower long-term rates. Used by Fed, ECB, BOJ after 2008.<span class="vi-tip">🇻🇳 <b>1. Lãi suất:</b> NHTW đặt lãi suất cơ bản → ảnh hưởng vay/cho vay. <b>2. Hoạt động thị trường mở (OMO):</b> NHTW mua/bán trái phiếu → kiểm soát tiền → bơm tiền → ↓lãi. <b>3. Yêu cầu dự trữ:</b> Dự trữ tối thiểu → ↑dự trữ → ↓vay → ↓tiền. <b>4. Nới lỏng định lượng (QE):</b> Khi lãi = 0%, NHTW mua tài sản → bơm tiền → ↓lãi dài hạn.</span></span></p>
 
   <p><span class="vi-hover"><strong>Expansionary:</strong> ↓interest rates → ↑borrowing → ↑C,I → AD right. <strong>Contractionary:</strong> ↑interest rates → ↓borrowing → ↓C,I → AD left. <strong>QE:</strong> Central bank buys bonds → injects money → ↓long-term rates.<span class="vi-tip">🇻🇳 <b>Mở rộng:</b> ↓lãi suất → ↑vay → ↑C,I → AD phải. <b>Thắt chặt:</b> ↑lãi suất → ↓vay → ↓C,I → AD trái. <b>Nới lỏng định lượng (QE):</b> NHTW mua trái phiếu → bơm tiền → ↓lãi suất dài hạn.</span></span></p>
+
+  <h4>Money Market — How the Interest Rate is Set</h4>
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 320" width="480" height="320" style="font-family:Inter,sans-serif">
+      <!-- MS vertical (controlled by CB), MD downward sloping. Show MS₁ shifting right to MS₂ → r₁ falls to r₂ -->
+      <defs><marker id="ahMM" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="var(--text)"/></marker></defs>
+      <line x1="60" y1="280" x2="450" y2="280" stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahMM)"/>
+      <line x1="60" y1="280" x2="60"  y2="20"  stroke="var(--text)" stroke-width="1.5" marker-end="url(#ahMM)"/>
+      <text x="250" y="308" text-anchor="middle" fill="var(--text2)" font-size="12">Quantity of money (M)</text>
+      <text x="22"  y="155" text-anchor="middle" fill="var(--text2)" font-size="12" transform="rotate(-90,22,155)">Interest rate (r)</text>
+
+      <!-- MD downward -->
+      <line x1="80" y1="60" x2="430" y2="260" stroke="#2563eb" stroke-width="2.8"/>
+      <text x="435" y="262" fill="#2563eb" font-size="13" font-weight="700">MD</text>
+
+      <!-- MS₁ vertical at x=200 -->
+      <line x1="200" y1="40" x2="200" y2="280" stroke="#7c3aed" stroke-width="2.5"/>
+      <text x="200" y="34" text-anchor="middle" fill="#7c3aed" font-size="12" font-weight="700">MS₁</text>
+      <!-- MS₂ vertical at x=290 (shift right after CB injection) -->
+      <line x1="290" y1="40" x2="290" y2="280" stroke="#059669" stroke-width="2.5" stroke-dasharray="6,4"/>
+      <text x="290" y="34" text-anchor="middle" fill="#059669" font-size="12" font-weight="700">MS₂</text>
+
+      <!-- Equilibrium r₁: MD ∩ MS₁: y at x=200 → 60 + (200-80)/(430-80) * 200 = 60 + 0.343*200 ≈ 128.6 -->
+      <circle cx="200" cy="129" r="5" fill="#7c3aed" stroke="var(--bg2)" stroke-width="2"/>
+      <line x1="60"  y1="129" x2="200" y2="129" stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="38" y="133" fill="#7c3aed" font-size="11" font-weight="700">r₁</text>
+
+      <!-- Equilibrium r₂: at x=290 → 60 + (290-80)/(430-80) * 200 = 60 + 0.6*200 = 180 -->
+      <circle cx="290" cy="180" r="5" fill="#059669" stroke="var(--bg2)" stroke-width="2"/>
+      <line x1="60"  y1="180" x2="290" y2="180" stroke="var(--text2)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="38" y="184" fill="#059669" font-size="11" font-weight="700">r₂</text>
+
+      <!-- Shift arrow -->
+      <path d="M 210 100 L 280 100" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ahMM)"/>
+      <text x="245" y="92" text-anchor="middle" fill="#059669" font-size="10" font-weight="600">CB injects money (OMO buy / QE)</text>
+
+      <!-- Drop arrow -->
+      <path d="M 100 132 L 100 175" fill="none" stroke="#dc2626" stroke-width="1.6" marker-end="url(#ahMM)"/>
+      <text x="106" y="160" fill="#dc2626" font-size="10" font-weight="600">r falls</text>
+    </svg>
+    <div class="diagram-caption">Money market — MS is <b>vertical</b> (controlled by the central bank). MD slopes down (low r → cheap to borrow → demand more money). Equilibrium r* is where MS = MD. An expansionary policy (CB buys bonds / lowers reserves / does QE) shifts MS <i>right</i> ⇒ r falls ⇒ C and I rise ⇒ AD shifts right.</div>
+  </div>
+
+  <h4>Monetary Transmission Mechanism</h4>
+  <div class="diagram-container">
+    <svg viewBox="0 0 540 380" width="540" height="380" style="font-family:Inter,sans-serif">
+      <defs><marker id="ahTM" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#059669"/></marker></defs>
+
+      <!-- Step 1 -->
+      <rect x="180" y="10" width="180" height="44" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" rx="8"/>
+      <text x="270" y="30" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">1. Central bank cuts base rate</text>
+      <text x="270" y="46" text-anchor="middle" fill="#1d4ed8" font-size="10">(or buys bonds via OMO / QE)</text>
+
+      <!-- Arrow down -->
+      <line x1="270" y1="56" x2="270" y2="76" stroke="#059669" stroke-width="2" marker-end="url(#ahTM)"/>
+
+      <!-- Step 2 -->
+      <rect x="180" y="80" width="180" height="44" fill="#ecfdf5" stroke="#059669" stroke-width="1.5" rx="8"/>
+      <text x="270" y="100" text-anchor="middle" fill="#059669" font-size="12" font-weight="700">2. Commercial bank rates fall</text>
+      <text x="270" y="116" text-anchor="middle" fill="#047857" font-size="10">Mortgages, business loans, credit cards</text>
+
+      <!-- Three branches -->
+      <line x1="270" y1="126" x2="270" y2="146" stroke="#059669" stroke-width="2"/>
+      <line x1="100" y1="146" x2="440" y2="146" stroke="#059669" stroke-width="2"/>
+      <line x1="100" y1="146" x2="100" y2="166" stroke="#059669" stroke-width="2" marker-end="url(#ahTM)"/>
+      <line x1="270" y1="146" x2="270" y2="166" stroke="#059669" stroke-width="2" marker-end="url(#ahTM)"/>
+      <line x1="440" y1="146" x2="440" y2="166" stroke="#059669" stroke-width="2" marker-end="url(#ahTM)"/>
+
+      <!-- 3a. Consumption -->
+      <rect x="20" y="170" width="160" height="60" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" rx="8"/>
+      <text x="100" y="190" text-anchor="middle" fill="#d97706" font-size="11" font-weight="700">3a. Consumption ↑</text>
+      <text x="100" y="206" text-anchor="middle" fill="var(--text)" font-size="9">Cheaper to borrow</text>
+      <text x="100" y="218" text-anchor="middle" fill="var(--text)" font-size="9">Saving less attractive</text>
+
+      <!-- 3b. Investment -->
+      <rect x="190" y="170" width="160" height="60" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" rx="8"/>
+      <text x="270" y="190" text-anchor="middle" fill="#d97706" font-size="11" font-weight="700">3b. Investment ↑</text>
+      <text x="270" y="206" text-anchor="middle" fill="var(--text)" font-size="9">More projects profitable</text>
+      <text x="270" y="218" text-anchor="middle" fill="var(--text)" font-size="9">Cheaper business loans</text>
+
+      <!-- 3c. Net exports -->
+      <rect x="360" y="170" width="160" height="60" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" rx="8"/>
+      <text x="440" y="190" text-anchor="middle" fill="#d97706" font-size="11" font-weight="700">3c. Net exports ↑</text>
+      <text x="440" y="206" text-anchor="middle" fill="var(--text)" font-size="9">Currency depreciates</text>
+      <text x="440" y="218" text-anchor="middle" fill="var(--text)" font-size="9">Exports cheaper, imports dearer</text>
+
+      <!-- Converging to AD -->
+      <line x1="100" y1="232" x2="100" y2="252" stroke="#059669" stroke-width="2"/>
+      <line x1="270" y1="232" x2="270" y2="252" stroke="#059669" stroke-width="2"/>
+      <line x1="440" y1="232" x2="440" y2="252" stroke="#059669" stroke-width="2"/>
+      <line x1="100" y1="252" x2="440" y2="252" stroke="#059669" stroke-width="2"/>
+      <line x1="270" y1="252" x2="270" y2="272" stroke="#059669" stroke-width="2" marker-end="url(#ahTM)"/>
+
+      <!-- Step 4 -->
+      <rect x="170" y="276" width="200" height="44" fill="#dcfce7" stroke="#059669" stroke-width="2" rx="8"/>
+      <text x="270" y="296" text-anchor="middle" fill="#059669" font-size="13" font-weight="700">4. AD shifts right</text>
+      <text x="270" y="312" text-anchor="middle" fill="#047857" font-size="10">AD = C + I + G + (X − M)</text>
+
+      <line x1="270" y1="322" x2="270" y2="342" stroke="#059669" stroke-width="2" marker-end="url(#ahTM)"/>
+
+      <!-- Step 5 -->
+      <rect x="170" y="346" width="200" height="28" fill="#bbf7d0" stroke="#15803d" stroke-width="2" rx="8"/>
+      <text x="270" y="365" text-anchor="middle" fill="#15803d" font-size="13" font-weight="700">5. Real GDP ↑, PL ↑, U ↓</text>
+    </svg>
+    <div class="diagram-caption">Expansionary monetary policy ripples through three channels — consumption, investment, and net exports — all of which feed into AD. Effects appear with a 6–18 month lag and may break down in a <b>liquidity trap</b> (r already at 0%) or when business confidence collapses.</div>
+  </div>
 
   <h4>Strengths &amp; Limitations of Monetary Policy</h4>
   <p><span class="vi-hover"><strong>Strengths:</strong> Independent of politics (central bank decides), flexible and quick to implement, incremental adjustments possible. <strong>Limitations:</strong> Time lags (6-18 months to take effect), <strong>liquidity trap</strong> (at very low rates, further cuts have no effect — people hoard cash), cannot target specific sectors, ineffective if banks unwilling to lend or firms unwilling to borrow (confidence problem), <strong>asymmetric effects</strong> (contractionary works better than expansionary — "you can pull a string but can't push it"), exchange rate effects may conflict with domestic goals.<span class="vi-tip">🇻🇳 <b>Ưu điểm:</b> Độc lập chính trị (NHTW quyết định), linh hoạt & nhanh, điều chỉnh từng bước. <b>Hạn chế:</b> Chậm trễ (6-18 tháng), bẫy thanh khoản (lãi quá thấp → cắt thêm vô dụng), không nhắm mục tiêu ngành, vô hiệu nếu ngân hàng không cho vay (vấn đề niềm tin), hiệu ứng không đối xứng (thắt chặt tốt hơn mở rộng), tỷ giá xung đột với mục tiêu nội địa.</span></span></p>
