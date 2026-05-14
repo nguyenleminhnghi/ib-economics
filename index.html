@@ -9,8 +9,35 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='66' font-family='Georgia,serif' font-weight='700' font-size='52' text-anchor='middle' fill='%23fff'%3E€%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f8fc;--bg2:#fff;--bg3:#eef2f8;--text:#0f172a;--text2:#475569;--accent:#2563eb;--accent2:#1d4ed8;--accent-light:#dbeafe;--accent-bg:#eff6ff;--green:#059669;--green-bg:#ecfdf5;--orange:#d97706;--orange-bg:#fffbeb;--red:#dc2626;--red-bg:#fef2f2;--purple:#7c3aed;--purple-bg:#f5f3ff;--border:#e2e8f0;--shadow:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);--shadow-lg:0 10px 25px -5px rgba(15,23,42,.08),0 8px 10px -6px rgba(15,23,42,.04);--radius:12px;--sidebar-w:280px}
-.dark{--bg:#0b1220;--bg2:#111a2e;--bg3:#1f2a44;--text:#e6edf7;--text2:#94a3b8;--accent:#60a5fa;--accent2:#93bbfc;--accent-light:#1e3a5f;--accent-bg:#13284a;--green:#34d399;--green-bg:#053b2e;--orange:#fbbf24;--orange-bg:#3a1f04;--red:#f87171;--red-bg:#3a0d0d;--purple:#a78bfa;--purple-bg:#241653;--border:#1f2a44;--shadow:0 1px 3px rgba(0,0,0,.4);--shadow-lg:0 10px 25px -5px rgba(0,0,0,.5)}
+/* SAPP-LMS palette: deep professional blue + quiz-card vibe */
+:root{
+  --bg:#f4f7fb;--bg2:#ffffff;--bg3:#eef3fa;
+  --text:#0b1d3a;--text2:#5a6b87;
+  --accent:#1e40af;--accent2:#1e3a8a;--accent-light:#dbeafe;--accent-bg:#eef4ff;
+  --brand:#1e40af;--brand-2:#3b82f6;--brand-soft:#e0e9ff;
+  --green:#059669;--green-bg:#ecfdf5;
+  --orange:#d97706;--orange-bg:#fff7ed;
+  --red:#dc2626;--red-bg:#fef2f2;
+  --purple:#6d28d9;--purple-bg:#f5f3ff;
+  --border:#dde6f1;--border-strong:#c8d4e6;
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 2px 6px rgba(15,23,42,.05);
+  --shadow-lg:0 8px 20px -6px rgba(30,64,175,.10),0 12px 28px -10px rgba(15,23,42,.08);
+  --radius:14px;--radius-lg:18px;
+  --sidebar-w:280px;
+}
+.dark{
+  --bg:#0a0f1c;--bg2:#0f1a2e;--bg3:#1a2540;
+  --text:#e6edf7;--text2:#8da0bf;
+  --accent:#60a5fa;--accent2:#93bbfc;--accent-light:#1e3a5f;--accent-bg:#0f2549;
+  --brand:#60a5fa;--brand-2:#93c5fd;--brand-soft:#11305f;
+  --green:#34d399;--green-bg:#053b2e;
+  --orange:#fbbf24;--orange-bg:#3a1f04;
+  --red:#f87171;--red-bg:#3a0d0d;
+  --purple:#a78bfa;--purple-bg:#1d1547;
+  --border:#1c2a45;--border-strong:#2a3a5a;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+  --shadow-lg:0 10px 28px -6px rgba(0,0,0,.55);
+}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background .3s,color .3s}
 h1,h2,h3,h4{font-family:'Source Serif 4',Georgia,serif;color:var(--text);line-height:1.3}
@@ -39,14 +66,98 @@ h1,h2,h3,h4{font-family:'Source Serif 4',Georgia,serif;color:var(--text);line-he
 
 .section{margin-bottom:40px;display:none}
 .section.active{display:block}
-.section-title{font-size:2rem;margin-bottom:6px;background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.01em}
-.section-subtitle{font-size:.95rem;color:var(--text2);margin-bottom:24px}
-.sidebar-header h2{background:linear-gradient(135deg,var(--accent),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:1.15rem}
-.diagram-container{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin:18px 0;text-align:center;box-shadow:var(--shadow-lg)}
-.def-box,.tip-box,.warn-box{border-radius:12px;box-shadow:var(--shadow)}
-.question-card{border-radius:14px;box-shadow:var(--shadow-lg)}
-.vn-example{border-radius:14px;box-shadow:var(--shadow)}
-h4{font-weight:700;letter-spacing:-.005em}
+/* ===== Page chrome — SAPP LMS vibe ===== */
+body{background:var(--bg)}
+.section-title{
+  font-size:1.9rem;font-weight:700;letter-spacing:-.015em;
+  color:var(--text);margin-bottom:8px;
+  -webkit-text-fill-color:initial;background:none
+}
+.section-title::before{
+  content:'';display:inline-block;width:5px;height:30px;
+  background:linear-gradient(180deg,var(--brand),var(--brand-2));
+  border-radius:3px;margin-right:14px;vertical-align:-4px
+}
+.section-subtitle{font-size:.95rem;color:var(--text2);margin:0 0 26px 19px}
+
+/* Sidebar */
+.sidebar{background:var(--bg2);border-right:1px solid var(--border);box-shadow:var(--shadow)}
+.sidebar-header{padding:18px 20px 18px;border-bottom:1px solid var(--border);margin-bottom:6px}
+.sidebar-header h2{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.2rem;color:var(--brand);background:none;-webkit-text-fill-color:initial}
+.sidebar-header p{font-size:.72rem;color:var(--text2);text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-top:4px}
+.nav-section-title{color:var(--brand);opacity:.75}
+.nav-link{padding:7px 12px;border-radius:8px;font-size:.84rem;font-weight:500;border-left:3px solid transparent;transition:all .15s ease}
+.nav-link:hover{background:var(--brand-soft);color:var(--brand);border-left-color:var(--brand-2)}
+.nav-link.active{background:var(--brand);color:#fff;border-left-color:var(--brand-2)}
+
+/* Topbar — SAPP-style brand bar */
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);box-shadow:var(--shadow);height:58px}
+.search-box input{border-radius:10px;background:var(--bg);border-color:var(--border);transition:border-color .15s,box-shadow .15s}
+.search-box input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(30,64,175,.12)}
+.theme-btn{border-radius:10px;border:1px solid var(--border);transition:all .15s}
+.theme-btn:hover{border-color:var(--brand);color:var(--brand)}
+
+/* H4 headings → quiz-style caps tag with brand bar */
+h4{
+  font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:1.4px;
+  color:var(--brand);margin:32px 0 14px;padding:6px 12px 6px 14px;
+  display:inline-flex;align-items:center;border-radius:8px;
+  background:var(--brand-soft);position:relative
+}
+h4::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--brand);margin-right:10px;display:inline-block
+}
+.dark h4{background:rgba(96,165,250,.12)}
+/* Inside cards we don't want the chip look */
+.exam-step-card h4,.exam-mini-card h4,.ao-card h4,.mistake-card h4,.paper-card h4,
+.q-answer h4,.practice-links-box h4{
+  background:none;padding:0;display:block;text-transform:none;letter-spacing:-.005em;
+  font-size:1rem;color:inherit
+}
+
+/* Cards / boxes — quiz vibe (rounded, soft border, hover lift) */
+.diagram-container{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:20px 22px;margin:20px 0;
+  text-align:center;box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s
+}
+.diagram-container:hover{box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.diagram-caption{font-size:.85rem;color:var(--text2);margin-top:12px;line-height:1.6;text-align:left;padding:0 4px}
+
+.def-box,.tip-box,.warn-box{border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px}
+.def-box{background:var(--brand-soft);border-left:4px solid var(--brand)}
+.def-box strong{color:var(--brand)}
+.tip-box{background:var(--green-bg);border-left:4px solid var(--green)}
+.warn-box{background:var(--orange-bg);border-left:4px solid var(--orange)}
+.formula-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;font-family:'JetBrains Mono','Menlo',monospace;font-size:.92rem}
+
+.question-card{border-radius:var(--radius-lg);box-shadow:var(--shadow);border:1px solid var(--border);transition:box-shadow .2s,border-color .2s,transform .2s}
+.question-card:hover{box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.q-badge{font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:.7rem}
+.q-text{font-weight:600}
+.show-ans-btn{background:var(--brand);border-radius:10px;font-weight:600;letter-spacing:.2px;transition:all .2s}
+.show-ans-btn:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 10px rgba(30,64,175,.25)}
+
+.vn-example{
+  border-radius:var(--radius-lg);box-shadow:var(--shadow);
+  background:linear-gradient(135deg,#fff7ed,#fef3c7);
+  border:1px solid #fcd34d;padding:16px 18px
+}
+.dark .vn-example{background:linear-gradient(135deg,#2a1a04,#3a2400);border-color:#78350f}
+
+/* Studied / Mark-as-studied button → pill */
+.studied-btn{border-radius:999px;font-weight:600;padding:5px 14px;letter-spacing:.3px;font-size:.72rem;text-transform:uppercase}
+
+/* Practice-links-box → card style */
+.practice-links-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);box-shadow:var(--shadow)}
+.practice-links-box::before{background:var(--bg2)}
+.practice-links-box a{background:var(--brand);border-radius:999px;font-weight:600}
+.practice-links-box a:hover{background:var(--accent2)}
+
+/* Course-card-like global section transition */
+.section{animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 p{margin-bottom:14px}
 .content h4{font-size:1rem;margin:18px 0 8px;color:var(--accent2)}
 
